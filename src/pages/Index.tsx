@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Login from '../components/Login';
 import Dashboard from '../components/Dashboard';
 import { AuthProvider, useAuth } from '../contexts/AuthContext';
@@ -25,6 +25,7 @@ const Index = () => {
             } 
           />
           <Route path="/" element={<Navigate to="/dashboard" />} />
+          <Route path="*" element={<Navigate to="/dashboard" />} />
         </Routes>
       </div>
     </AuthProvider>
